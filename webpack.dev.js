@@ -36,7 +36,8 @@ module.exports = {
                 loaders: [
                     'awesome-typescript-loader',
                     'angular2-template-loader',
-                    'source-map-loader'
+                    'angular2-router-loader',
+                    'source-map-loader'                    
                 ]
             },
             {
