@@ -6,6 +6,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+var launch = require("./config/hosting.json");
 
 console.log("@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@");
 
@@ -63,7 +65,6 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(
             [
-                './wwwroot',
                 './wwwroot/dist',
                 './wwwroot/fonts',
                 './wwwroot/assets',
@@ -78,7 +79,23 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: './webclient/app/assets/images/*.*', to: "assets/", flatten: true },
             { from: './webclient/api', to:'api/',flatten:false}
-        ])
+        ]),
+
+        new BrowserSyncPlugin({
+            // browse to http://localhost:3000/ during development 
+            host: 'localhost',
+            port: 5000,
+            // proxy the Webpack Dev Server endpoint 
+            // (which should be serving on http://localhost:3100/) 
+            // through BrowserSync 
+            proxy: 'http://localhost:3000/',
+        },
+        // plugin options 
+        {
+            // prevent BrowserSync from reloading the page 
+            // and let Webpack Dev Server take care of this 
+            reload: true
+        })
     ]
 
 };

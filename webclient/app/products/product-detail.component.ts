@@ -17,7 +17,6 @@ export class ProductDetailComponent implements OnInit {
     }
 
     onBack(): void{
-        console.log("HEEEEEEY");
         this._router.navigate(['/products']);
     }
 }
