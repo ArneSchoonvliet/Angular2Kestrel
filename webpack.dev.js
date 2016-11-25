@@ -7,7 +7,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-var launch = require("./config/hosting.json");
 
 console.log("@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@");
 
@@ -22,6 +21,7 @@ module.exports = {
     output: {
         path: "./wwwroot/",
         filename: 'dist/[name].bundle.js',
+        chunkFilename: '[id].chunk.js',
         publicPath: "/"
     },
 
@@ -66,6 +66,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(
             [
+                './wwwwroot',
                 './wwwroot/dist',
                 './wwwroot/fonts',
                 './wwwroot/assets',

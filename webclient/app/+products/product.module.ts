@@ -11,13 +11,8 @@ import { ProductService } from './product.service'
 
 @NgModule({
     imports: [
-        SharedModule,
-        // RouterModule.forChild([
-        //     {path: 'products', component: ProductListComponent },
-        //     {path: 'product/:id', canActivate: [ ProductGuardService ], 
-        //                         component: ProductDetailComponent },
-        // ])
         ProductRoutingModule,
+        SharedModule
         ],
     declarations: [
         ProductListComponent, 
