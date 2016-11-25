@@ -9,7 +9,7 @@ import { ProductGuardService } from './product-guard.service';
     imports: [
         RouterModule.forChild([
             {path: '', component: ProductListComponent },
-            {path: ':id', canActivate: [ ProductGuardService ], 
+            {path: ':id', /*canActivate: [ ProductGuardService ],*/ 
                                 component: ProductDetailComponent },
         ])
     ],

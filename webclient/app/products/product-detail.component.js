@@ -11,7 +11,6 @@ export var ProductDetailComponent = (function () {
         this.pageTitle += ": " + id;
     };
     ProductDetailComponent.prototype.onBack = function () {
-        console.log("HEEEEEEY");
         this._router.navigate(['/products']);
     };
     ProductDetailComponent.decorators = [
