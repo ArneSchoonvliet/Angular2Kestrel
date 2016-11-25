@@ -18,7 +18,8 @@ module.exports = {
     output: {
         path: "./wwwroot/",
         filename: 'dist/[name].[hash].bundle.js',
-        publicPath: "/"
+        publicPath: "/",
+        chunkFilename: '[hash].chunk.js'
     },
 
     resolve: {
@@ -30,7 +31,8 @@ module.exports = {
             {
                 test: /\.ts$/,
                 loaders: [
-                    'awesome-typescript-loader'
+                    'awesome-typescript-loader',
+                    'angular2-router-loader?aot=true&genDir=aot'
                 ]
             },
             {
@@ -59,6 +61,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(
             [
+                './wwwroot',
                 './wwwroot/dist',
                 './wwwroot/fonts',
                 './wwwroot/assets',

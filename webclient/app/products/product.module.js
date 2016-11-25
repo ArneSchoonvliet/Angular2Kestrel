@@ -12,8 +12,8 @@ export var ProductModule = (function () {
     ProductModule.decorators = [
         { type: NgModule, args: [{
                     imports: [
-                        SharedModule,
                         ProductRoutingModule,
+                        SharedModule
                     ],
                     declarations: [
                         ProductListComponent,
