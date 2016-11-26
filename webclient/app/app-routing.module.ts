@@ -6,8 +6,8 @@ import { WelcomeComponent } from './home/welcome.component'
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            {path: 'product', loadChildren: './products/product.module#ProductModule' },
             {path: 'welcome', component: WelcomeComponent },
+            /*{path: 'product', loadChildren: './products/product.module#ProductModule' },*/
             {path: '', redirectTo: 'welcome', pathMatch: 'full' },
             {path: '**', redirectTo: 'welcome', pathMatch: 'full' }
         ])

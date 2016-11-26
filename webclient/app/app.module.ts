@@ -12,6 +12,7 @@ import { WelcomeComponent } from './home/welcome.component';
 @NgModule({
   imports: [ 
     BrowserModule, 
+    ProductModule,
     AppRoutingModule,
     HttpModule
   ],

@@ -8,7 +8,6 @@ export var AppRoutingModule = (function () {
         { type: NgModule, args: [{
                     imports: [
                         RouterModule.forRoot([
-                            { path: 'product', loadChildren: './products/product.module#ProductModule' },
                             { path: 'welcome', component: WelcomeComponent },
                             { path: '', redirectTo: 'welcome', pathMatch: 'full' },
                             { path: '**', redirectTo: 'welcome', pathMatch: 'full' }

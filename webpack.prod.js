@@ -32,8 +32,7 @@ module.exports = {
                 test: /\.ts$/,
                 loaders: [
                     'awesome-typescript-loader?configFileName=tsconfig-aot.json',
-                    'angular2-router-loader?aot=true&genDir=aot/'
-                    
+                    'angular2-router-loader?genDir=aot&aot=true'
                 ]
             },
             {
@@ -95,7 +94,7 @@ module.exports = {
         }),
 
         new CopyWebpackPlugin([
-            { from: './webclient/app/assets/images/*.*', to: "assets/", flatten: true },
+            { from: './webclient/assets/images/*.*', to: "assets/", flatten: true },
             { from: './webclient/api', to:'api/',flatten:false}
         ])
     ]

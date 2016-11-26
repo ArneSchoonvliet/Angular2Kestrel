@@ -17,6 +17,7 @@
   },
   "files": [
     "webclient/app/app.module.ts",
+    "webclient/app/products/product.module.ts",
     "webclient/main-aot.ts"
   ],
   "angularCompilerOptions": {
