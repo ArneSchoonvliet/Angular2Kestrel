@@ -11,7 +11,7 @@ export var ProductDetailComponent = (function () {
         this.pageTitle += ": " + id;
     };
     ProductDetailComponent.prototype.onBack = function () {
-        this._router.navigate(['/products']);
+        this._router.navigate(['/product']);
     };
     ProductDetailComponent.decorators = [
         { type: Component, args: [{

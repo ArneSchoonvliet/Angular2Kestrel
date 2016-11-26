@@ -79,7 +79,7 @@ module.exports = {
             template: 'webclient/index.html'
         }),
         new CopyWebpackPlugin([
-            { from: './webclient/app/assets/images/*.*', to: "assets/", flatten: true },
+            { from: './webclient/assets/images/*.*', to: "assets/", flatten: true },
             { from: './webclient/api', to:'api/',flatten:false}
         ]),
 

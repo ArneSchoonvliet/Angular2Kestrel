@@ -9,7 +9,7 @@
     "removeComments": true,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "lib": [
       "es2015",
       "dom"
@@ -17,7 +17,6 @@
   },
   "files": [
     "webclient/app/app.module.ts",
-    "webclient/app/products/product.module.ts",
     "webclient/main-aot.ts"
   ],
   "angularCompilerOptions": {
