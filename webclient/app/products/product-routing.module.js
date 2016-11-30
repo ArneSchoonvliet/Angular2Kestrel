@@ -9,8 +9,8 @@ export var ProductRoutingModule = (function () {
         { type: NgModule, args: [{
                     imports: [
                         RouterModule.forChild([
-                            { path: 'product', component: ProductListComponent },
-                            { path: 'product/:id',
+                            { path: '', component: ProductListComponent },
+                            { path: ':id',
                                 component: ProductDetailComponent },
                         ])
                     ],

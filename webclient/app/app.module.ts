@@ -11,8 +11,7 @@ import { WelcomeComponent } from './home/welcome.component';
  
 @NgModule({
   imports: [ 
-    BrowserModule, 
-    ProductModule,
+    BrowserModule,
     AppRoutingModule,
     HttpModule
   ],

@@ -8,8 +8,8 @@ import { ProductGuardService } from './product-guard.service';
 @NgModule({
     imports: [
         RouterModule.forChild([
-            {path: 'product', component: ProductListComponent },
-            {path: 'product/:id', /*canActivate: [ ProductGuardService ],*/ 
+            {path: '', component: ProductListComponent },
+            {path: ':id', /*canActivate: [ ProductGuardService ],*/ 
                                 component: ProductDetailComponent },
         ])
     ],
