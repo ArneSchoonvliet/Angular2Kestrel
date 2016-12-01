@@ -3,8 +3,9 @@ _site/
 Properties/
 node_modules/
 wwwroot/
-webclient/app/**/*.js
-webclient/app/**/*.map
+aot/
+webclient/**/*.js
+webclient/**/*.map
 node_modules
 jspm_packages
 bower_components
