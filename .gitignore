@@ -3,7 +3,6 @@ _site/
 Properties/
 node_modules/
 wwwroot/
-aot/
 webclient/**/*.js
 webclient/**/*.map
 node_modules

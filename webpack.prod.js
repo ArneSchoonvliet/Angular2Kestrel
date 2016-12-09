@@ -6,6 +6,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CompressionPlugin = require("compression-webpack-plugin");
+var ngtools = require('@ngtools/webpack');
+
 
 console.log("@@@@@@@@@ USING PRODUCTION @@@@@@@@@@@@@@@");
 
@@ -31,9 +33,7 @@ module.exports = {
             {
                 test: /\.ts$/,
                 loaders: [
-                    'awesome-typescript-loader?configFileName=tsconfig-aot.json',
-                    'angular2-template-loader',
-                    'angular2-router-loader?genDir=aot&aot=true'
+                    '@ngtools/webpack'
                 ]
             },
             {
@@ -60,6 +60,9 @@ module.exports = {
     },
 
     plugins: [
+        new ngtools.AotPlugin({
+            tsConfigPath: './tsconfig-aot.json',
+        }),
         new CleanWebpackPlugin(
             [
                 './wwwroot',
@@ -80,14 +83,14 @@ module.exports = {
             sourceMap: false
         }),
 
-         new CompressionPlugin({
+        new CompressionPlugin({
             asset: "[path].gz[query]",
             algorithm: "gzip",
             test: /\.js$|\.css$|\.html$/,
             threshold: 10240,
             minRatio: 0.8
         }),
- 
+
         new HtmlWebpackPlugin({
             filename: 'index.html',
             inject: 'body',
@@ -96,7 +99,7 @@ module.exports = {
 
         new CopyWebpackPlugin([
             { from: './webclient/assets/images/*.*', to: "assets/", flatten: true },
-            { from: './webclient/api', to:'api/',flatten:false}
+            { from: './webclient/api', to: 'api/', flatten: false }
         ])
     ]
 
